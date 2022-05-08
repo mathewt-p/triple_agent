@@ -1,0 +1,17 @@
+development: &default
+  adapter: postgresql
+  database: triple_agent
+  username: postgres
+  password: postgres
+  encoding: utf8
+  min_messages: warning
+  pool: 2
+  timeout: 5000
+
+test:
+  <<: *default
+  database: triple_agent_test
+
+production:
+  <<: *default
+  database: triple_agent_prod

@@ -1,0 +1,30 @@
+<div class="container">
+  <h4> Hi <%= @current_user.username %> </h4>
+  
+  <div class="row">
+    <h4> Rules</h4>
+    <div class='rules'>The rules come here </div>
+  </div>
+  <div class="row">
+    <div class="col-md-5" style="border: solid;height: 600px;">
+      <h4>Public messages</h4>
+      <hr>
+      <%= turbo_stream_from @group_room %>
+      <div id="group_messages">
+      </div>
+    </div>
+    <div class="col-md-1"></div>
+    <div class="col-md-6" style="border: solid;height: 400px;">
+      
+      <h4> Private messages</h4>
+      <hr>
+      <%= turbo_stream_from @private_room %>
+      <div id="private_messages"></div>
+    </div>
+
+  </div>
+</div>
+
+
+
+<% link_to 'Sign Out', signout_path,  :method => :delete %>

@@ -1,0 +1,11 @@
+<div class="col-md-10 bg-dark text-light" style="height: 100vh;">
+  <h4 class="text-center"> <%= @single_room.name %> </h4>
+  <%= turbo_stream_from @single_room %>
+  <div id="messages">
+    <%= render @messages %>
+  </div>
+</div>
+
+
+<div class="message-box msg-<%= message.user.id %>">
+</div>
